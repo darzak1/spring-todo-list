@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class TodoDTO {
 
-    public int id;
+    public Integer id;
     public String title;
     public String dueDate;
     public String status;
