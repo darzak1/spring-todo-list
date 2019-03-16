@@ -4,6 +4,7 @@ package pl.edu.wszib.todolist.springtodolist.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.edu.wszib.todolist.springtodolist.dto.TodoDTO;
+import pl.edu.wszib.todolist.springtodolist.model.Status;
 import pl.edu.wszib.todolist.springtodolist.service.TodoService;
 
 import java.util.List;
@@ -40,5 +41,14 @@ public class TodoController {
     public  List<TodoDTO> upcomming() {
         return (List<TodoDTO>) todoService.upcoming();
     }
+    @GetMapping("/todos/count/{status}")
+    public int count (@PathVariable Status status){
+        return todoService.count(status);
+    }
+    @GetMapping("/todos/search/{status}")
+    public List<TodoDTO> search (@PathVariable Status status){
+        return todoService.search(status);
+    }
+
 
 }

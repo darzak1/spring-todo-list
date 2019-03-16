@@ -1,6 +1,7 @@
 package pl.edu.wszib.todolist.springtodolist.service;
 
 import pl.edu.wszib.todolist.springtodolist.dto.TodoDTO;
+import pl.edu.wszib.todolist.springtodolist.model.Status;
 
 import java.util.List;
 
@@ -12,6 +13,8 @@ public interface TodoService {
     TodoDTO update (TodoDTO dto);
     TodoDTO remove (Integer id);
     List<TodoDTO> upcoming ();
+    int count (Status status);
+    List<TodoDTO> search (Status status);
 
 
 
